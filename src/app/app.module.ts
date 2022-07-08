@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PokemonListComponent } from './componets/pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './componets/pokemon-card/pokemon-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { PokemonCardComponent } from './componets/pokemon-card/pokemon-card.comp
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

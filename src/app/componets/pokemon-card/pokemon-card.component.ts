@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { Pokemon } from 'src/app/Pokemon';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -6,8 +8,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent {
-  @Input()
-  pokemon: string ='';
+  @Input('pokemon')
+  pokemon?: Pokemon;
+
+  // @Input()
+  // pokemon: string ='';
 
   @Input()
   number: number = 0;
