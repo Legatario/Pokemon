@@ -7,20 +7,18 @@ import { PokemonService } from './services/pokemon.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
+
   title = 'Pokemon';
 
-  search: string = '';
+
 
 
   constructor(public pokemonService: PokemonService) {
 
   }
 
-
-  public getSearch(value: string){
-    this.search=value;
-    console.log(value);
-  }
 
 
 }

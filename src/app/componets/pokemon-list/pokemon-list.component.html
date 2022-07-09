@@ -1,3 +1,5 @@
+<app-search (emmitSearch)="getSearch($event)"></app-search>
+
 <section>
   <div class="container">
       <app-pokemon-card *ngFor="let pokemon of getAllPokemons
@@ -7,4 +9,9 @@
       ></app-pokemon-card>
   </div>
 
+
+
 </section>
+
+
+<!-- (emmitSearch)="getSearch($event)" -->

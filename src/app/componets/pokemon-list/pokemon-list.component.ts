@@ -1,15 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
+
 
 
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.css']
+  styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent {
-
-  @Input() search: string= '';
 
 
   public getAllPokemons: any;
@@ -23,16 +22,14 @@ export class PokemonListComponent {
     this.pokemonService.AllPokemons.subscribe(
       res => {
           this.getAllPokemons = res.results;
+          console.log()
         }
       );
 
     }
 
-    public getSearch(){
-      const filter = this.getAllPokemons.filter ((res:any)=>{
-        return !res.name.indexOf(this.search.toString);
-      })
-      this.getAllPokemons = filter;
+    public getSearch(value: string){
+      console.log(value)
     }
 
 

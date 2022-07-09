@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,7 @@ import { FooterComponent } from './componets/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { PokemonListComponent } from './componets/pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './componets/pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +36,8 @@ import { SearchComponent } from './componets/search/search.component';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent]
