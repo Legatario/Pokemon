@@ -1,5 +1,5 @@
 <header>
-  <app-header></app-header>
+  <app-header (emmitSearch)="getSearch($event)"></app-header>
 </header>
 
 <main>
@@ -9,3 +9,5 @@
 <footer>
   <app-footer></app-footer>
 </footer>
+
+<!-- [search]="search" -->

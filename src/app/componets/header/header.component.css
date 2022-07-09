@@ -14,3 +14,18 @@ img{
 .example-icon img{
   width: 100%;
 }
+
+input{
+  border-radius: 15px;
+  border: none;
+  margin-right: 5px;
+}
+
+input:hover{
+  box-shadow: 0 1px 6px rgb(32, 33, 36);
+  border-color: rgba(223,225,229,0);
+}
+
+input:focus{
+  outline: 0;
+}

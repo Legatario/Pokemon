@@ -10,10 +10,12 @@ import { FooterComponent } from './componets/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 import { PokemonListComponent } from './componets/pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './componets/pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
+import { SearchComponent } from './componets/search/search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { PokemonService } from './services/pokemon.service';
     HeaderComponent,
     FooterComponent,
     PokemonListComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { PokemonService } from './services/pokemon.service';
     FontAwesomeModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatInputModule,
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule

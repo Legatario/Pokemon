@@ -1,7 +1,10 @@
-<div class="container">
-    <app-pokemon-card *ngFor="let pokemon of pokemonService.pokemons | async
-    index as i"
-    [pokemon]= "pokemon"
-    [number] = "i+1"
-    ></app-pokemon-card>
-</div>
+<section>
+  <div class="container">
+      <app-pokemon-card *ngFor="let pokemon of getAllPokemons
+      index as i"
+      [pokemon]= "pokemon"
+      [number] = "i+1"
+      ></app-pokemon-card>
+  </div>
+
+</section>

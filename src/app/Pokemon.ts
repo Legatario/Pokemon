@@ -3,6 +3,7 @@ export interface Pokemon {
   url: string;
   type: Type[];
   number: number;
+  status: any;
 }
 
 enum Type {

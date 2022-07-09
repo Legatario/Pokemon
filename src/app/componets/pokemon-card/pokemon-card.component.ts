@@ -11,14 +11,16 @@ export class PokemonCardComponent {
   @Input('pokemon')
   pokemon?: Pokemon;
 
-  // @Input()
-  // pokemon: string ='';
 
   @Input()
   number: number = 0;
 
+  l: number = 0;
+
+  // chama img pokemon atraves do ID
+
   cathPokemon(){
-    const numberPokemon = this.leadingZero(this.number);
+    const numberPokemon = this.leadingZero(this.pokemon?.status.id);
 
     return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${numberPokemon}.png`;
   }
