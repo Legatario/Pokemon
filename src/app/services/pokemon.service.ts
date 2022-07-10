@@ -11,7 +11,7 @@ export class PokemonService {
 
   public pokemons = new ReplaySubject<Pokemon[]>(1);
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20'
+  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151'
 
 // chamada de Api pokemon
   constructor(private httpCliente: HttpClient) {
@@ -44,4 +44,5 @@ export class PokemonService {
         )
       )
   }
+
 }

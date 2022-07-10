@@ -1,0 +1,33 @@
+.container{
+  border: solid 1px rgb(175, 171, 171);
+  padding: 20px 10px;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+input{
+  border-radius: 5px;
+  margin-right: 5px;
+  width: 60%;
+  padding: 5px 0;
+  border: 1px solid rgb(175, 171, 171);
+  color:  rgb(122, 118, 118);
+}
+
+input:hover{
+  box-shadow: 0 1px 6px rgb(32, 33, 36);
+  border-color: rgb(175, 171, 171);
+}
+
+input:focus{
+  outline: 0;
+}
+
+input::placeholder{
+  text-align: center;
+}

@@ -10,8 +10,12 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonListComponent {
 
-
+  private setAllPokemons: any;
   public getAllPokemons: any;
+
+  private urlName: string = 'https://pokeapi.co/api/v2/pokemon/';
+  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150'
+
 
 
   constructor(public pokemonService: PokemonService){
@@ -21,15 +25,30 @@ export class PokemonListComponent {
   ngOnInit(): void{
     this.pokemonService.AllPokemons.subscribe(
       res => {
-          this.getAllPokemons = res.results;
-          console.log()
+          this.setAllPokemons = res.results;
+          this.getAllPokemons = this.setAllPokemons;
+          console.log(this.setAllPokemons);
         }
       );
 
+
     }
 
-    public getSearch(value: string){
-      console.log(value)
+    // recebe string de search e faz um retorno dos pokemons
+
+    public getSearch(value: any){
+      const filter = this.setAllPokemons.filter((res: any)=>{
+        console.log(value);
+
+        if (isNaN(value)) {
+          return !res.name.indexOf(value.toLocaleLowerCase());
+        }
+        return !res.url.indexOf(this.urlName+value.toLocaleLowerCase());
+      })
+
+      this.getAllPokemons = filter;
+      console.log(this.urlName+value);
+      console.log(filter);
     }
 
 
@@ -37,3 +56,4 @@ export class PokemonListComponent {
 
 
 
+  // return !res.name.indexOf(value.toLocaleLowerCase());

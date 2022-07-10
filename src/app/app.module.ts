@@ -1,3 +1,4 @@
+import { SearchComponent } from './componets/search/search.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +17,7 @@ import { PokemonListComponent } from './componets/pokemon-list/pokemon-list.comp
 import { PokemonCardComponent } from './componets/pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
-import { SearchComponent } from './componets/search/search.component';
+
 
 @NgModule({
   declarations: [
