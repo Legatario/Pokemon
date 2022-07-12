@@ -13,7 +13,6 @@ export class PokemonService {
 
   private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
 
-  poke2= [];
 
 // chamada de Api pokemon
   constructor(private httpCliente: HttpClient) {
@@ -68,10 +67,10 @@ export class PokemonService {
   }
 
   // função async
-  // async callPokemons(){
-  //   const call = await this.httpCliente.get<any>('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20').toPromise();
+  // async callPokemons(url: string){
+  //   const call = await this.httpCliente.get<any>(url).toPromise();
 
-  //    this.poke2 = call.results;
+  //   return call
   // }
 
 
