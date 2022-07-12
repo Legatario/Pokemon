@@ -19,7 +19,7 @@ export class PokemonListComponent {
 
   private urlName: string = 'https://pokeapi.co/api/v2/pokemon/';
 
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon?limit=150&offset=0';
+  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
 
 
@@ -34,7 +34,6 @@ export class PokemonListComponent {
       res => {
           this.setAllPokemons = res.results;
           this.getAllPokemons = this.setAllPokemons ;
-          console.log(this.setAllPokemons);
         }
         );
         this.detailsPokemon();
@@ -76,8 +75,6 @@ export class PokemonListComponent {
       forkJoin([pokemon]).subscribe(
         res => {
           this.whoPokemon = res[0].results;
-          console.log(this.whoPokemon);
-
 
         }
       )
