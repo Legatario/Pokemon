@@ -1,23 +1,25 @@
 <section>
-  <div class="container-card" *ngIf="pokemon?.status">
-    <!-- função que retorna o url da imagem com o ID do pokemon -->
-    <div class="img">
-      <div class="circle" ngClass="{{ pokemon?.status.types[l].type.name }}">
-        <img [src]= "cathPokemon()"  [alt]="pokemon?.name"><br>
+  <a [routerLink]="['details', pokemon?.status?.id]">
+    <div class="container-card" *ngIf="pokemon?.status">
+      <!-- função que retorna o url da imagem com o ID do pokemon -->
+      <div class="img">
+        <div class="circle" ngClass="{{ pokemon?.status.types[l].type.name }}">
+          <img [src]= "cathPokemon()"  [alt]="pokemon?.name"><br>
+        </div>
       </div>
-    </div>
-    <div class="number">
-      Nº {{leadingZero (pokemon?.status.id) }}
-    </div>
-   <b>
-    {{ pokemon?.name }}
-  </b>
+      <div class="number">
+        Nº {{leadingZero (pokemon?.status.id) }}
+      </div>
+    <b>
+      {{ pokemon?.name }}
+    </b>
 
-  <!-- recebe a os tipos do pokemon e cria classe igual ao tipo -->
+    <!-- recebe a os tipos do pokemon e cria classe igual ao tipo -->
 
-  <div class="pokemon-card-type">
-    <div class="pokemon-card__type " *ngFor="let type of  pokemon?.status.types index as l" ngClass="{{ pokemon?.status.types[l].type.name }}">{{ pokemon?.status.types[l].type.name }}</div>
-  </div>
-  </div>
+    <div class="pokemon-card-type">
+      <div class="pokemon-card__type " *ngFor="let type of  pokemon?.status.types index as l" ngClass="{{ pokemon?.status.types[l].type.name }}">{{ pokemon?.status.types[l].type.name }}</div>
+    </div>
+    </div>
+</a>
 </section>
 

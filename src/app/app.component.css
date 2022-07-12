@@ -1,4 +1,13 @@
+
 main{
   padding: 50px 50px;
   background: rgba(238, 231, 231);
+  min-width: 412px;
+  min-height: 47rem;
+}
+
+@media (max-width: 412px) {
+  main{
+    min-height: 75rem;
+  }
 }

@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
 
   }
 
+  // emitindo informação de input para pokemon-lis
+
   public search(value: any){
     this.emmitSearch.emit(value)
   }

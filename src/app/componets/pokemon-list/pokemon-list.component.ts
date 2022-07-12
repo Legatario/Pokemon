@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { forkJoin } from 'rxjs';
+
 
 
 
@@ -10,11 +12,14 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokemonListComponent {
 
-  private setAllPokemons: any;
+  public setAllPokemons: any;
   public getAllPokemons: any;
 
+  public whoPokemon: any;
+
   private urlName: string = 'https://pokeapi.co/api/v2/pokemon/';
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150'
+
+  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon?limit=150&offset=0';
 
 
 
@@ -22,38 +27,65 @@ export class PokemonListComponent {
 
   }
 
+  // ao inicializar puxa função do service de mapeamento de pokemon e retorna esta informação para a pokemon-list
+
   ngOnInit(): void{
     this.pokemonService.AllPokemons.subscribe(
       res => {
           this.setAllPokemons = res.results;
-          this.getAllPokemons = this.setAllPokemons;
+          this.getAllPokemons = this.setAllPokemons ;
           console.log(this.setAllPokemons);
         }
-      );
-
-
+        );
+        this.detailsPokemon();
     }
 
     // recebe string de search e faz um retorno dos pokemons
 
+
     public getSearch(value: any){
-      const filter = this.setAllPokemons.filter((res: any)=>{
+
+      const filter = this.whoPokemon .filter((res: any)=>{
         console.log(value);
 
         if (isNaN(value)) {
-          return !res.name.indexOf(value.toLocaleLowerCase());
+          return !res.name.indexOf(value.toLocaleLowerCase()); // usano o name (toLocaleLowerCase()) deixa tudo em minusculo
         }
-        return !res.url.indexOf(this.urlName+value.toLocaleLowerCase());
+        return !res.url.indexOf(this.urlName+value); //usando o url pra retonar a chamada pelo numero
       })
 
-      this.getAllPokemons = filter;
-      console.log(this.urlName+value);
-      console.log(filter);
+      if(value===''){
+        this.getAllPokemons = this.setAllPokemons;
+      }
+
+      else{
+        this.getAllPokemons = filter;
+        console.log(filter); // imprimir retorno de input no console
+
+      }
+
+
     }
 
+
+    public detailsPokemon(){
+
+      const pokemon = this.pokemonService.SearcPokemons(`${this.urlPokemon}`);
+
+
+      forkJoin([pokemon]).subscribe(
+        res => {
+          this.whoPokemon = res[0].results;
+          console.log(this.whoPokemon);
+
+
+        }
+      )
+
+    }
 
   }
 
 
 
-  // return !res.name.indexOf(value.toLocaleLowerCase());
+

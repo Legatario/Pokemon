@@ -11,16 +11,18 @@ export class PokemonService {
 
   public pokemons = new ReplaySubject<Pokemon[]>(1);
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151'
+  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20'
 
 // chamada de Api pokemon
   constructor(private httpCliente: HttpClient) {
 
-    const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30';
+    // const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30';
 
-    this.httpCliente.get<any>(apiUrl).pipe(map(value => value.results)).subscribe(this.pokemons);
+    // this.httpCliente.get<any>(apiUrl).pipe(map(value => value.results)).subscribe(this.pokemons);
 
    }
+
+  //  mapeando pokemon por nome
 
    get AllPokemons():Observable<any>{
     return this.httpCliente.get<any>(this.url).pipe(
@@ -36,6 +38,8 @@ export class PokemonService {
     )
   }
 
+  // recendo todas as informações dos pokemons como id e type
+
   public apiGetPokemons( url: string):Observable<any>{
       return this.httpCliente.get<any>( url ).pipe(
         map(
@@ -45,4 +49,22 @@ export class PokemonService {
       )
   }
 
+  public SearcPokemons(url: string):Observable<any>{
+    return this.httpCliente.get<any>(url).pipe(
+      tap( res => res),
+      tap( res => {
+        res.results.map( (resPokemons: any)=>{
+
+          this.apiGetPokemons(resPokemons.url).subscribe(
+            res => resPokemons.status = res
+          )
+        })
+      })
+    )
+  }
+
+
+
 }
+
+

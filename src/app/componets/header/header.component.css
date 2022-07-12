@@ -5,6 +5,7 @@
 mat-toolbar{
   background-color: rgb(224, 15, 15);
   color: #fff;
+  min-width: 512px;
 }
 
 img{

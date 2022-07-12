@@ -1,6 +1,7 @@
 mat-toolbar{
   background: rgba(44, 43, 43, 0.979);
   color: #fff;
+  min-width: 512px;
 }
 
 .container a{

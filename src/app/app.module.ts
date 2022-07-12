@@ -1,3 +1,4 @@
+import { PokeRoutesModule } from './poke-routes/poke-routes.module';
 import { SearchComponent } from './componets/search/search.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,8 @@ import { PokemonListComponent } from './componets/pokemon-list/pokemon-list.comp
 import { PokemonCardComponent } from './componets/pokemon-card/pokemon-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
+import { DetailsComponent } from './componets/details/details.component';
+import { RoutingModule } from './poke-routes/routing.modules';
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import { PokemonService } from './services/pokemon.service';
     FooterComponent,
     PokemonListComponent,
     PokemonCardComponent,
-    SearchComponent
+    SearchComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { PokemonService } from './services/pokemon.service';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    PokeRoutesModule,
+    RoutingModule
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent]
