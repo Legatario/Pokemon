@@ -8,6 +8,7 @@
   justify-content: center;
   margin: 10px 0;
   border-radius: 10px;
+  background: #212121;
 }
 
 input{
@@ -17,11 +18,12 @@ input{
   padding: 5px 0;
   border: 1px solid rgb(175, 171, 171);
   color:  rgb(122, 118, 118);
+  background: rgb(175, 171, 171);
 }
 
 input:hover{
-  box-shadow: 0 1px 6px rgb(32, 33, 36);
-  border-color: rgb(175, 171, 171);
+  box-shadow: 0 1px 6px rgba(19, 18, 18, 0);
+  border-color: rgb(255, 255, 255);
 }
 
 input:focus{

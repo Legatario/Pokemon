@@ -98,6 +98,8 @@ button{
     margin: 10px;
 }
 
+/* estilos dos types */
+
 .grass{
 background-color: #78c850da;
 color: #212121;
@@ -182,6 +184,8 @@ color: #fff;
 background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
   color: #fff;
 }
+
+/* animação de entrada */
 
 .slideInDown {
   -webkit-animation-name: slideInDown;
