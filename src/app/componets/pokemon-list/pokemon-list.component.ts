@@ -87,7 +87,6 @@ export class PokemonListComponent {
       forkJoin([pokemon]).subscribe(
         res => {
           this.whoPokemon = res[0].results;
-
         }
       )
 
@@ -107,10 +106,20 @@ export class PokemonListComponent {
       this.localAllPokemons = localStorage.getItem('results');
       this.localAllPokemons = (JSON.parse(this.localAllPokemons));
 
-
+      // this.callLocalPokemon();
 
 
     }
+
+    // public callLocalPokemon(){
+    //   console.log(this.localAllPokemons);
+    //   let url = localStorage.getItem(`results`)?.split(",");
+    //   console.log(`${ url }`);
+    //   let urx = (JSON.parse(`${ url }`));
+    //   console.log(  urx[0].url );
+
+
+    // }
 
     // adiciona + 20 pokemons na listagem, ele faz uma nova requisição a api
     public setOff(){
