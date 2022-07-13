@@ -11,7 +11,8 @@ export class PokemonService {
 
   public pokemons = new ReplaySubject<Pokemon[]>(1);
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
+  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=21';
+
 
 
 // chamada de Api pokemon
@@ -20,6 +21,7 @@ export class PokemonService {
     // const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=30';
 
     // this.httpCliente.get<any>(apiUrl).pipe(map(value => value.results)).subscribe(this.pokemons);
+
 
    }
 
@@ -50,7 +52,7 @@ export class PokemonService {
       )
   }
 
-  // chamada flexivel de API
+  // chamada flexivel de API, chamada async
 
   public SearcPokemons(url: string):Observable<any>{
     return this.httpCliente.get<any>(url).pipe(

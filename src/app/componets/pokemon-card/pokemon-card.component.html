@@ -1,6 +1,6 @@
 <section>
   <a [routerLink]="['details', pokemon?.status?.id]">
-    <div class="container-card" *ngIf="pokemon?.status">
+    <div class="container-card" *ngIf="pokemon?.status?.id">
       <!-- função que retorna o url da imagem com o ID do pokemon -->
       <div class="img">
         <div class="circle" ngClass="{{ pokemon?.status.types[l].type.name }}">
@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="number">
-        Nº {{leadingZero (pokemon?.status.id) }}
+        Nº {{ leadingZero (pokemon?.status.id) }}
       </div>
     <b>
       {{ pokemon?.name }}
