@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Code
+
+This Code create by Luís Phillipe Nunes Dalilla, binds-co teste-vaga-front-end my my special thanks to Ana Carolina Rodrigues
+
+
+This code uses
+
+- HTML
+
+- CSS
+
+- Javascript
+
+- Git
+
+- APIs Rest - ApiPokemon - https://pokeapi.co/
+
+- @Angular
+
+- Material
+
+- Typescript
+
+- Project completion date  13/07/2022 - Date in BR
