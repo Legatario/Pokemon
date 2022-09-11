@@ -40,4 +40,4 @@
 | [<img src="https://avatars.githubusercontent.com/u/103957268?v=4" width=115><br><sub>Luís Phillipe Nunes</sub>](https://github.com/legatario) 
 | :---: |
 
-- Project completion date  13/07/2022 - Date in BR
+-Data de finalização do projeto 13/07/2022
